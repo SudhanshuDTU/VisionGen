@@ -15,7 +15,7 @@ function CreatePost() {
     if (form.prompt) {
       try {
         setgeneratingImg(true);
-        const response = await fetch("http://localhost:4400/api/v1/dalle", {
+        const response = await fetch("https://visiongen.onrender.com/api/v1/dalle", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt: form.prompt }),
@@ -36,7 +36,7 @@ function CreatePost() {
         if(form.prompt && form.photo){
           setloading(true);
           try {
-            const response  = await fetch('http://localhost:4400/api/v1/post',{
+            const response  = await fetch('https://visiongen.onrender.com/api/v1/post',{
               method: "POST",
               
               headers: { "Content-Type": "application/json" },
